@@ -64,7 +64,8 @@ body {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background-image: url(imagen/Viaja-barato-a-Cancun-scaled.webp);
+    /*background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);*/
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -84,6 +85,19 @@ body {
     font-size: 1.2rem;
     margin-bottom: 2rem;
     opacity: 0.9;
+}
+
+.booking {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    position: absolute;
+    margin-top: -185px;
+  margin-left: 130px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    min-width: 385px;
+  min-height: 370px;
+
+    color: #333;
 }
 
 /* Formulario de Reservación */
