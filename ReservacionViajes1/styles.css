@@ -100,6 +100,16 @@ body {
     color: #333;
 }
 
+.WhatIs{
+    padding-top: 90px;
+  padding-bottom: 100px;
+  color: white;
+  background-color: #f5f8ff;
+  text-align: center;
+    align-items: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
 /* Formulario de Reservación */
 .booking-form {
     background: rgba(255, 255, 255, 0.95);
@@ -299,6 +309,8 @@ body {
 .service-item p {
     color: #666;
 }
+
+/*Contactos*/
 
 /* Footer */
 .footer {
