@@ -159,21 +159,21 @@
                 </div>
 
                 <div class="destination-card">
-                    <img src="imagen/1.jpg" width=300  alt="Nueva York">
+                    <img src="imagen/Machu.jpg" width=300  alt="Nueva York">
                     <div class="card-content">
-                        <h3>Nueva York</h3>
-                        <p>La gran manzana</p>
+                        <h3>Peru</h3>
+                        <p>Machu Picchu</p>
                         <div class="price">Desde $449</div>
                         <button class="btn-reserve">Reservar</button>
                     </div>
                 </div>
 
                  <div class="destination-card">
-                    <img src="imagen/1.jpg" width=300  alt="Nueva York">
+                    <img src="imagen/Piramides.jpg" width=300  alt="Nueva York">
                     <div class="card-content">
-                        <h3>Nueva York</h3>
-                        <p>La gran manzana</p>
-                        <div class="price">Desde $449</div>
+                        <h3>Egipto</h3>
+                        <p>las Pirámides de Giza</p>
+                        <div class="price">Desde $949</div>
                         <button class="btn-reserve">Reservar</button>
                     </div>
                 </div>
@@ -192,34 +192,65 @@
         </div>
     </section>
 
-    <!-- Servicios -->
-    <section class="moavi-section" id="servicios">
-        <div class="moavi-container">
-            <div class="moavi-content">
-                <h2 class="moavi-title">Viaja por el Mundo con ViajaFacil</h2>
-                <p class="moavi-description">
-                    Cada rincón del mundo tiene una historia que contar, un paisaje que admirar 
-                    y una experiencia que vivir. Déjanos ser tus guías y acompáñanos en la 
-                    aventura de tu vida.
-                </p>
-                <p class="moavi-description">
-                    Cotiza tu viaje hoy y prepárate para descubrir, aprender y disfrutar en grande. 
-                    ¡El mundo te espera!
-                </p>
-            </div>
-            <div class="moavi-image-container">
-                <div class="moavi-logo-overlay">
-                    <h3 class="moavi-logo-text">ViajaFacil</h3>
-                    <p class="moavi-logo-subtitle">AGENCIA DE VIAJES</p>
+   <section class="moavi-section" id="servicios">
+    <div class="moavi-container">
+        <div class="moavi-content">
+            <h2 class="moavi-title">Viaja por el Mundo con ViajaFacil</h2>
+            <p class="moavi-description">
+                Cada rincón del mundo tiene una historia que contar, un paisaje que admirar 
+                y una experiencia que vivir. Déjanos ser tus guías y acompáñanos en la 
+                aventura de tu vida.
+            </p>
+            <p class="moavi-description">
+                Cotiza tu viaje hoy y prepárate para descubrir, aprender y disfrutar en grande. 
+                ¡El mundo te espera!
+            </p>
+        </div>
+        
+        <div class="moavi-carousel-container">
+            <div class="moavi-carousel">
+                <!-- Imágenes del carrusel -->
+                <div class="carousel-slide active">
+                    <img src="imagen/671ae33203644.png" alt="Destino de viaje 1">
+                    <div class="moavi-logo-overlay">
+                        <h3 class="moavi-logo-text">ViajaFacil</h3>
+                        <p class="moavi-logo-subtitle">AGENCIA DE VIAJES</p>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="imagen/entrada-de-turistas.jpg" alt="Destino de viaje 2">
+                    <div class="moavi-logo-overlay">
+                        <h3 class="moavi-logo-text">ViajaFacil</h3>
+                        <p class="moavi-logo-subtitle">AGENCIA DE VIAJES</p>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="imagen/istockphoto-1438587977-612x612.jpg" alt="Destino de viaje 3">
+                    <div class="moavi-logo-overlay">
+                        <h3 class="moavi-logo-text">ViajaFacil</h3>
+                        <p class="moavi-logo-subtitle">AGENCIA DE VIAJES</p>
+                    </div>
                 </div>
             </div>
+            
+            <!-- Controles del carrusel -->
+            <button class="carousel-btn prev" aria-label="Anterior">&lt;</button>
+            <button class="carousel-btn next" aria-label="Siguiente">&gt;</button>
+            
+            <!-- Indicadores -->
+            <div class="carousel-indicators">
+                <span class="indicator active" data-slide="0"></span>
+                <span class="indicator" data-slide="1"></span>
+                <span class="indicator" data-slide="2"></span>
+            </div>
         </div>
-    </section>
+    </div>
+</section>
 
      <!-- Ubicanos -->
     <section class="moavi-section" id="servicios">
         <div class="moavi-container">
-            <div class="moavi-image-container">
+            <div class="moavi-image-containera">
                 <div class="moavi-logo-overlay">
                     <h3 class="moavi-logo-text">ViajaFacil</h3>
                     <p class="moavi-logo-subtitle">AGENCIA DE VIAJES</p>
@@ -283,51 +314,55 @@
         </div>
     </footer>
 
-    <!-- Agrega esto antes de cerrar el body -->
-<script src="https://maps.googleapis.com/maps/api/js?key=TU_API_KEY&callback=initMap" async defer></script>
-<script>
-    function initMap() {
-        // Coordenadas de tu ubicación (ejemplo)
-        const ubicacion = { lat: -12.046374, lng: -77.042793 }; // Lima, Perú como ejemplo
-        const map = new google.maps.Map(document.getElementById("map"), {
-            zoom: 15,
-            center: ubicacion,
-            styles: [
-                {
-                    "featureType": "all",
-                    "elementType": "labels.text.fill",
-                    "stylers": [
-                        {"saturation": 36},
-                        {"color": "#333333"},
-                        {"lightness": 40}
-                    ]
-                },
-                {
-                    "featureType": "all",
-                    "elementType": "labels.text.stroke",
-                    "stylers": [
-                        {"visibility": "on"},
-                        {"color": "#ffffff"},
-                        {"lightness": 16}
-                    ]
-                },
-                {
-                    "featureType": "all",
-                    "elementType": "labels.icon",
-                    "stylers": [
-                        {"visibility": "off"}
-                    ]
+ <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const carousel = document.querySelector('.moavi-carousel');
+        const slides = document.querySelectorAll('.carousel-slide');
+        const prevBtn = document.querySelector('.prev');
+        const nextBtn = document.querySelector('.next');
+        const indicators = document.querySelectorAll('.indicator');
+        
+        let currentIndex = 0;
+        const totalSlides = slides.length;
+        
+        function updateCarousel() {
+            carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+            
+            // Actualizar indicadores
+            indicators.forEach((indicator, index) => {
+                if (index === currentIndex) {
+                    indicator.classList.add('active');
+                } else {
+                    indicator.classList.remove('active');
                 }
-            ]
+            });
+        }
+        
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            updateCarousel();
+        }
+        
+        function prevSlide() {
+            currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+            updateCarousel();
+        }
+        
+        // Event listeners
+        nextBtn.addEventListener('click', nextSlide);
+        prevBtn.addEventListener('click', prevSlide);
+        
+        // Indicadores
+        indicators.forEach(indicator => {
+            indicator.addEventListener('click', function() {
+                currentIndex = parseInt(this.getAttribute('data-slide'));
+                updateCarousel();
+            });
         });
         
-        // Marcador en la ubicación
-        new google.maps.Marker({
-            position: ubicacion,
-            map: map,
-            title: "ViajaFacil"
-        });
-    }
+        // Auto-avance cada 5 segundos
+        setInterval(nextSlide, 5000);
+    });
 </script>
 </body>
 </html>
