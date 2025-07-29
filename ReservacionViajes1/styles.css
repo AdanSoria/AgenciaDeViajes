@@ -418,3 +418,180 @@ body {
         padding: 1rem;
     }
 }
+
+ .moavi-section {
+            padding: 0;
+            margin: 60px 0;
+        }
+        
+        .moavi-container {
+            display: flex;
+            max-width: 1200px;
+            margin: 0 auto;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-radius: 0;
+            overflow: hidden;
+        }
+        
+        .moavi-content {
+            flex: 1;
+            background-color: #f0f2f5;
+            padding: 60px 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .moavi-title {
+            font-size: 2.2rem;
+            color: #1e3a5f;
+            font-weight: 700;
+            margin-bottom: 30px;
+            line-height: 1.2;
+        }
+        
+        .moavi-description {
+            color: #4a5568;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+        
+        .moavi-image-container {
+            flex: 1;
+            position: relative;
+            min-height: 400px;
+            background-image: url('imagen/Viajes.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        
+        .moavi-logo-overlay {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            background: rgba(255,255,255,0.95);
+            padding: 15px 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        .moavi-logo-text {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #2563eb;
+            letter-spacing: 3px;
+            margin: 0;
+        }
+        
+        .moavi-logo-subtitle {
+            font-size: 0.9rem;
+            color: #f59e0b;
+            font-weight: 600;
+            text-align: center;
+            margin: 5px 0 0 0;
+            letter-spacing: 1px;
+        }
+        
+        /* Servicios adicionales */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 60px auto 0;
+            padding: 0 20px;
+        }
+        
+        .service-item {
+            background: white;
+            border-radius: 12px;
+            padding: 30px 25px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .service-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+        
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.8rem;
+            color: white;
+        }
+        
+        .service-item h3 {
+            color: #1e3a5f;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .service-item p {
+            color: #64748b;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .moavi-container {
+                flex-direction: column;
+                margin: 0 20px;
+                border-radius: 12px;
+            }
+            
+            .moavi-content {
+                padding: 40px 30px;
+            }
+            
+            .moavi-title {
+                font-size: 1.8rem;
+            }
+            
+            .moavi-image-container {
+                min-height: 300px;
+            }
+            
+            .moavi-logo-overlay {
+                top: 20px;
+                right: 20px;
+                padding: 12px 20px;
+            }
+            
+            .moavi-logo-text {
+                font-size: 1.4rem;
+                letter-spacing: 2px;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+                margin-top: 40px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .moavi-content {
+                padding: 30px 20px;
+            }
+            
+            .moavi-title {
+                font-size: 1.6rem;
+            }
+            
+            .moavi-description {
+                font-size: 1rem;
+            }
+        }
