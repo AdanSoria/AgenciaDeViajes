@@ -1,0 +1,402 @@
+
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<title>Paquetes - ViajaFácil</title>
+<link href="styles.css" rel="stylesheet"/>
+<style>
+        .paquetes-container {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .filtros {
+            text-align: center;
+            margin-bottom: 30px;
+        
+    margin-top: 100px;
+}
+
+        .filtros button {
+    margin: 8px 10px;
+    padding: 12px 24px;
+    border: none;
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.filtros button::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: left 0.3s ease;
+}
+
+.filtros button:hover::after {
+    left: 0;
+}
+
+.filtros button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 123, 255, 0.4);
+}
+
+
+        .paquetes-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .paquete {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            overflow: hidden;
+            width: 300px;
+            transition: transform 0.3s;
+        }
+
+        .paquete:hover {
+            transform: translateY(-5px);
+        }
+
+        .paquete img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .paquete .contenido {
+            padding: 15px;
+        }
+
+        .paquete h3 {
+            margin: 0 0 10px;
+            color: #0d2f52;
+        }
+
+        .paquete p {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+
+        .hidden {
+            display: none;
+        }
+    
+.paquetes-grid {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 20px;
+    padding-bottom: 10px;
+    scrollbar-width: thin;
+}
+.paquetes-grid::-webkit-scrollbar {
+    height: 8px;
+}
+.paquetes-grid::-webkit-scrollbar-thumb {
+    background-color: #007bff;
+    border-radius: 4px;
+}
+.paquetes-grid::-webkit-scrollbar-track {
+    background-color: #e0e0e0;
+}
+
+.paquetes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    max-height: 600px;
+    overflow-y: auto;
+    padding-right: 10px;
+    gap: 20px;
+}
+
+.paquetes-grid::-webkit-scrollbar {
+    width: 6px;
+}
+
+.paquetes-grid::-webkit-scrollbar-thumb {
+    background-color: #007bff;
+    border-radius: 5px;
+}
+
+.paquetes-grid::-webkit-scrollbar-track {
+    background-color: #f0f0f0;
+}
+
+.paquetes-container {
+    padding: 40px 20px 80px;
+    background-color: #f5f8fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+.paquetes-grid {
+    gap: 30px;
+}
+.paquete {
+    background-color: #ffffff;
+    border: 1px solid #e2e2e2;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.2s ease;
+}
+.paquete:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+}
+</style>
+</head>
+<body>
+<header class="header" style="background-color:#0d2f52; padding: 15px 0;">
+<div class="container" style="text-align:center; color:white;">
+<h1 style="margin:0; font-size: 28px;"><i class="fas fa-plane"></i> ViajaFácil</h1>
+<nav class="nav" style="margin-top:10px;">
+<a href="index.html" style="color:white; margin: 0 15px;">Inicio</a>
+<a href="contacto.html" style="color:white; margin: 0 15px;">Contacto</a>
+<a href="#servicios" style="color: white; margin: 0 15px;">Viajes</a>
+<a href="paquetes.html" style="color:white; margin: 0 15px;">Paquetes</a>
+<a href="organigrama.html" style="color:white; margin: 0 15px;">Organigrama</a>
+
+</header>
+
+<div class="paquetes-container">
+<h1 style="text-align:center;">Paquetes de Viaje</h1>
+<div class="filtros">
+<button onclick="filtrar('todos')">Todos</button>
+<button onclick="filtrar('oferta')">Ofertas</button>
+<button onclick="filtrar('deportivos')">Deportivos y Culturales</button>
+<button onclick="filtrar('especial')">Especiales</button>
+<button onclick="filtrar('tour')">Tours</button>
+</div>
+<div class="paquetes-grid">
+<div class="paquete oferta">
+<a href="contacto.html" class="paquete oferta"></a>
+<img alt="París" src="imagen/paris.jpg"/>
+<div class="contenido">
+<h3>París Económico</h3>
+<p>5 días / 4 noches</p>
+<p><strong>Desde $699 USD</strong></p>
+<p>Incluye hospedaje, vuelos y traslados.</p>
+</div>
+</div>
+<div class="paquete deportivos">
+<img alt="Roma cultural" src="imagen/roma.jpg"/>
+<div class="contenido">
+<h3>Roma Histórica</h3>
+<p>7 días / 6 noches</p>
+<p>Incluye tour por el Coliseo, museos y estadios.</p>
+</div>
+</div>
+<div class="paquete especial">
+<img alt="Luna de miel" src="imagen/Luna de Miel en Maldivas.jpg"/>
+<div class="contenido">
+<h3>Luna de Miel en Maldivas</h3>
+<p>5 días románticos</p>
+<p><strong>Desde $3,500 USD</strong></p>
+<p>Resort frente al mar + cena privada.</p>
+</div>
+</div>
+<div class="paquete tour">
+<img alt="Asia Tour" src="imagen/Untitled.jpg"/>
+<div class="contenido">
+<h3>Tour Japón y Corea</h3>
+<p>10 días / 9 noches</p>
+<p>Guía bilingüe, tren bala y templos históricos.</p>
+</div>
+</div>
+<div class="paquete deportivos">
+<img alt="Qatar Mundial" src="imagen/Deportes en Qatar.jpg"/>
+<div class="contenido">
+<h3>Deportes en Qatar</h3>
+<p>Paquete especial para eventos deportivos</p>
+<p>Incluye boletos y alojamiento 4★</p>
+</div>
+</div>
+<div class="paquete especial">
+<img alt="Familiar Cancún" src="imagen/Vacaciones Familiares en Cancún.jpg"/>
+<div class="contenido">
+<h3>Vacaciones Familiares en Cancún</h3>
+<p>6 días / 5 noches todo incluido</p>
+<p>Club infantil, buffet y playa privada.</p>
+</div>
+</div>
+<div class="paquete tour">
+<img alt="Tour Europa" src="imagen/Gran Tour Europa.jpg"/>
+<div class="contenido">
+<h3>Gran Tour Europa</h3>
+<p>15 días, 6 ciudades</p>
+<p>Incluye: Madrid, París, Roma, Viena...</p>
+</div>
+</div>
+<div class="paquete oferta">
+<img alt="Escapada a Guanajuato" src="imagen/Escapada a Guanajuato.jpg"/>
+<div class="contenido">
+<h3>Escapada a Guanajuato</h3>
+<p>4 días / 3 noches</p>
+<p><strong>Desde $399 MXN</strong></p>
+<p>Incluye hotel en el centro y recorrido callejonadas.</p>
+</div>
+</div>
+
+<div class="paquete especial">
+<img alt="Viaje Exclusivo a Dubai" src="imagen/Viaje Exclusivo a Dubai.jpg"/>
+<div class="contenido">
+<h3>Viaje Exclusivo a Dubai</h3>
+<p>7 días de lujo</p>
+<p><strong>$5,999 USD</strong></p>
+<p>Incluye hotel 5★, city tour y cena en yate.</p>
+</div>
+</div><div class="paquete deportivos">
+<img alt="Tour Olímpico París 2024" src="imagen/Tour Olímpico París 2024.jpg"/>
+<div class="contenido">
+<h3>Tour Olímpico París 2024</h3>
+<p>6 días olímpicos</p>
+<p><strong>$3,499 USD</strong></p>
+<p>Entradas a eventos + city tour histórico.</p>
+</div>
+</div><div class="paquete tour">
+<img alt="Ruta del Vino en España" src="imagen/Ruta del Vino en España.jpg"/>
+<div class="contenido">
+<h3>Ruta del Vino en España</h3>
+<p>8 días / 7 noches</p>
+<p><strong>$2,199 USD</strong></p>
+<p>Catas, bodegas y guías especializados.</p>
+</div>
+</div><div class="paquete tour">
+<img alt="Pueblos Mágicos de México" src="imagen/Pueblos Mágicos de México.jpg"/>
+<div class="contenido">
+<h3>Pueblos Mágicos de México</h3>
+<p>5 días / 4 noches</p>
+<p><strong>$899 MXN</strong></p>
+<p>Visita San Miguel, Tlaquepaque y Taxco.</p>
+</div>
+</div><div class="paquete especial">
+<img alt="Islas Griegas en Crucero" src="imagen/Islas Griegas en Crucero.jpg"/>
+<div class="contenido">
+<h3>Islas Griegas en Crucero</h3>
+<p>9 días de romance</p>
+<p><strong>$4,800 USD</strong></p>
+<p>Ideal para luna de miel o aniversario.</p>
+</div>
+</div><div class="paquete oferta">
+<img alt="Nueva York Express" src="imagen/Nueva York Express.jpg"/>
+<div class="contenido">
+<h3>Nueva York Express</h3>
+<p>3 días</p>
+<p><strong>$599 USD</strong></p>
+<p>Ideal para escapadas rápidas.</p>
+</div>
+</div><div class="paquete deportivos">
+<img alt="Tour Estadio Santiago Bernabéu" src="imagen/Tour Estadio Santiago Bernabéu.jpg"/>
+<div class="contenido">
+<h3>Tour Estadio Santiago Bernabéu</h3>
+<p>2 días</p>
+<p><strong>$299 USD</strong></p>
+<p>Visita guiada + museo.</p>
+</div>
+</div><div class="paquete especial">
+<img alt="Fin de Semana en Las Vegas" src="imagen/Fin de Semana en Las Vegas.jpg"/>
+<div class="contenido">
+<h3>Fin de Semana en Las Vegas</h3>
+<p>3 noches</p>
+<p><strong>$1,199 USD</strong></p>
+<p>Incluye vuelo + hotel + espectáculos.</p>
+</div>
+</div><div class="paquete tour">
+<img alt="Ruta del Café en Colombia" src="imagen/Ruta del Café en Colombia.jpg"/>
+<div class="contenido">
+<h3>Ruta del Café en Colombia</h3>
+<p>7 días</p>
+<p><strong>$1,099 USD</strong></p>
+<p>Explora fincas cafeteras y pueblos mágicos.</p>
+</div>
+</div><div class="paquete oferta">
+<img alt="Cancún Todo Incluido" src="imagen/Cancún Todo Incluido.jpg"/>
+<div class="contenido">
+<h3>Cancún Todo Incluido</h3>
+<p>5 noches</p>
+<p><strong>$699 MXN</strong></p>
+<p>Buffet, alberca y playa.</p>
+</div>
+</div><div class="paquete especial">
+<img alt="Safari en Sudáfrica" src="imagen/Safari en Sudáfrica.jpg"/>
+<div class="contenido">
+<h3>Safari en Sudáfrica</h3>
+<p>6 días</p>
+<p><strong>$4,500 USD</strong></p>
+<p>Reserva natural con guía privada.</p>
+</div>
+</div></div>
+
+</div>
+
+<script>
+        function filtrar(categoria) {
+            const paquetes = document.querySelectorAll('.paquete');
+            paquetes.forEach(p => {
+                if (categoria === 'todos') {
+                    p.classList.remove('hidden');
+                } else {
+                    if (p.classList.contains(categoria)) {
+                        p.classList.remove('hidden');
+                    } else {
+                        p.classList.add('hidden');
+                    }
+                }
+            });
+        }
+    </script>
+
+<footer class="footer" id="contacto">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>ViajaFácil</h3>
+                    <p>Tu agencia de viajes de confianza desde ayer</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <p><i class="fas fa-phone"></i> +34 900 123 456</p>
+                    <p><i class="fas fa-envelope"></i> info@viajafacil.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Tepic, Nayarit</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Enlaces</h4>
+                    <ul>
+                        <li><a href="#">Términos y condiciones</a></li>
+                        <li><a href="#">Política de privacidad</a></li>
+                        <li><a href="#">Cancelaciones</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 ViajaFácil. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
