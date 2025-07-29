@@ -29,13 +29,14 @@
     <div class="formulario">
       <h1 class="titulo-contacto">Contacto</h1>
       <p>Por favor llena el formulario con tus planes de viaje. ¡Nosotros lo hacemos por ti!</p>
-      <form>
-        <input type="email" placeholder="Email*" required />
-        <input type="text" placeholder="Asunto*" required />
-        <input type="tel" placeholder="Teléfono*" required />
-        <textarea rows="6" placeholder="Mensaje*" required></textarea>
-        <button type="submit">Enviar Ahora</button>
-      </form>
+      <form id="form-contacto">
+  <input type="email" name="email" placeholder="Email*" required />
+  <input type="text" name="asunto" placeholder="Asunto*" required />
+  <input type="tel" name="telefono" placeholder="Teléfono*" required />
+  <textarea name="mensaje" rows="6" placeholder="Mensaje*" required></textarea>
+  <button type="submit">Enviar Ahora</button>
+</form>
+
     </div>
     <div class="info-contacto">
       <div class="card-contacto">
@@ -82,5 +83,33 @@
             </div>
         </div>
     </footer>
+    <script>
+document.getElementById("form-contacto").addEventListener("submit", async function (e) {
+  e.preventDefault();
+
+  const data = {
+    email: this.email.value,
+    asunto: this.asunto.value,
+    telefono: this.telefono.value,
+    mensaje: this.mensaje.value
+  };
+
+  try {
+    const response = await fetch('http://localhost:3000/api/contacto', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    });
+
+    const result = await response.json();
+    alert(result.mensaje || result.error);
+    this.reset();
+  } catch (err) {
+    alert("Error al enviar el formulario.");
+  }
+});
+</script>
+
 </body>
+
 </html>
