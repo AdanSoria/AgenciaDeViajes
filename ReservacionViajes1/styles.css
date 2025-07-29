@@ -100,14 +100,16 @@ body {
     color: #333;
 }
 
-.WhatIs{
-    padding-top: 90px;
+.WhatIs {
+  padding-top: 90px;
   padding-bottom: 100px;
   color: white;
   background-color: #f5f8ff;
   text-align: center;
-    align-items: center;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  align-items: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  
+  font-size: 1.2rem; 
 }
 
 /* Formulario de Reservación */
