@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ViajaFácil - Agencia de Viajes</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-plane"></i>
+                <span>ViajaFácil</span>
+            </div>
+            <nav class="nav">
+                <a href="#inicio">Inicio</a>
+                <a href="#destinos">Destinos</a>
+                <a href="#ofertas">Ofertas</a>
+                <a href="#contacto">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <h1>Descubre el mundo con nosotros</h1>
+            <p>Encuentra los mejores destinos y ofertas para tu próximo viaje</p>
+            
+            <!-- Formulario de Reservación -->
+            <div class="booking-form">
+                <h2>Reserva tu viaje</h2>
+                <form class="form-grid">
+                    <div class="form-group">
+                        <label for="origen">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Origen
+                        </label>
+                        <select id="origen" required>
+                            <option value="">Selecciona origen</option>
+                            <option value="madrid">Puerto Vallarta</option>
+                            <option value="barcelona">Guadalajara</option>
+                            <option value="valencia">Guayabitos</option>
+                            <option value="sevilla">Veracruz</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="destino">
+                            <i class="fas fa-location-arrow"></i>
+                            Destino
+                        </label>
+                        <select id="destino" required>
+                            <option value="">Selecciona destino</option>
+                            <option value="paris">París</option>
+                            <option value="roma">Roma</option>
+                            <option value="londres">Londres</option>
+                            <option value="tokio">Tokio</option>
+                            <option value="nueva-york">Nueva York</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fecha-ida">
+                            <i class="fas fa-calendar-alt"></i>
+                            Fecha de ida
+                        </label>
+                        <input type="date" id="fecha-ida" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fecha-vuelta">
+                            <i class="fas fa-calendar-check"></i>
+                            Fecha de vuelta
+                        </label>
+                        <input type="date" id="fecha-vuelta">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pasajeros">
+                            <i class="fas fa-users"></i>
+                            Pasajeros
+                        </label>
+                        <select id="pasajeros" required>
+                            <option value="1">1 Pasajero</option>
+                            <option value="2">2 Pasajeros</option>
+                            <option value="3">3 Pasajeros</option>
+                            <option value="4">4 Pasajeros</option>
+                            <option value="5+">5+ Pasajeros</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="clase">
+                            <i class="fas fa-star"></i>
+                            Clase
+                        </label>
+                        <select id="clase" required>
+                            <option value="economica">Económica</option>
+                            <option value="premium">Premium</option>
+                            <option value="business">Business</option>
+                            <option value="primera">Primera Clase</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn-search">
+                        <i class="fas fa-search"></i>
+                        Buscar Vuelos
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Destinos Populares -->
+    <section class="destinations" id="destinos">
+        <div class="container">
+            <h2>Destinos Populares</h2>
+            <div class="destinations-grid">
+                <div class="destination-card">
+                    <img src="/placeholder.svg?height=200&width=300" alt="París">
+                    <div class="card-content">
+                        <h3>París</h3>
+                        <p>La ciudad del amor</p>
+                        <div class="price">Desde €299</div>
+                        <button class="btn-reserve">Reservar</button>
+                    </div>
+                </div>
+
+                <div class="destination-card">
+                    <img src="/placeholder.svg?height=200&width=300" alt="Roma">
+                    <div class="card-content">
+                        <h3>Roma</h3>
+                        <p>Historia y cultura</p>
+                        <div class="price">Desde €249</div>
+                        <button class="btn-reserve">Reservar</button>
+                    </div>
+                </div>
+
+                <div class="destination-card">
+                    <img src="/placeholder.svg?height=200&width=300" alt="Tokio">
+                    <div class="card-content">
+                        <h3>Tokio</h3>
+                        <p>Tradición y modernidad</p>
+                        <div class="price">Desde €599</div>
+                        <button class="btn-reserve">Reservar</button>
+                    </div>
+                </div>
+
+                <div class="destination-card">
+                    <img src="/placeholder.svg?height=200&width=300" alt="Nueva York">
+                    <div class="card-content">
+                        <h3>Nueva York</h3>
+                        <p>La gran manzana</p>
+                        <div class="price">Desde €449</div>
+                        <button class="btn-reserve">Reservar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios -->
+    <section class="services">
+        <div class="container">
+            <h2>Nuestros Servicios</h2>
+            <div class="services-grid">
+                <div class="service-item">
+                    <i class="fas fa-plane"></i>
+                    <h3>Vuelos</h3>
+                    <p>Las mejores tarifas aéreas</p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-hotel"></i>
+                    <h3>Hoteles</h3>
+                    <p>Alojamiento de calidad</p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-car"></i>
+                    <h3>Alquiler de coches</h3>
+                    <p>Movilidad garantizada</p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-umbrella-beach"></i>
+                    <h3>Paquetes</h3>
+                    <p>Viajes todo incluido</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contacto">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>ViajaFácil</h3>
+                    <p>Tu agencia de viajes de confianza desde ayer</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <p><i class="fas fa-phone"></i> +34 900 123 456</p>
+                    <p><i class="fas fa-envelope"></i> info@viajafacil.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Tepic, Nayarit</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Enlaces</h4>
+                    <ul>
+                        <li><a href="#">Términos y condiciones</a></li>
+                        <li><a href="#">Política de privacidad</a></li>
+                        <li><a href="#">Cancelaciones</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 ViajaFácil. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
