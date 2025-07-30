@@ -4,181 +4,33 @@
 <html lang="es">
 <head>
 <meta charset="utf-8"/>
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
 <title>Paquetes - ViajaFácil</title>
 <link href="styles.css" rel="stylesheet"/>
-<style>
-        .paquetes-container {
-            padding: 40px 20px;
-            max-width: 1200px;
-            margin: auto;
-        }
-
-        .filtros {
-            text-align: center;
-            margin-bottom: 30px;
-        
-    margin-top: 100px;
-}
-
-        .filtros button {
-    margin: 8px 10px;
-    padding: 12px 24px;
-    border: none;
-    background: linear-gradient(135deg, #007bff, #0056b3);
-    color: white;
-    border-radius: 30px;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-}
-
-.filtros button::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.2);
-    transition: left 0.3s ease;
-}
-
-.filtros button:hover::after {
-    left: 0;
-}
-
-.filtros button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(0, 123, 255, 0.4);
-}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 
 
-        .paquetes-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-        }
-
-        .paquete {
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            overflow: hidden;
-            width: 300px;
-            transition: transform 0.3s;
-        }
-
-        .paquete:hover {
-            transform: translateY(-5px);
-        }
-
-        .paquete img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-        }
-
-        .paquete .contenido {
-            padding: 15px;
-        }
-
-        .paquete h3 {
-            margin: 0 0 10px;
-            color: #0d2f52;
-        }
-
-        .paquete p {
-            margin: 5px 0;
-            font-size: 14px;
-        }
-
-        .hidden {
-            display: none;
-        }
-    
-.paquetes-grid {
-    display: flex;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    gap: 20px;
-    padding-bottom: 10px;
-    scrollbar-width: thin;
-}
-.paquetes-grid::-webkit-scrollbar {
-    height: 8px;
-}
-.paquetes-grid::-webkit-scrollbar-thumb {
-    background-color: #007bff;
-    border-radius: 4px;
-}
-.paquetes-grid::-webkit-scrollbar-track {
-    background-color: #e0e0e0;
-}
-
-.paquetes-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    max-height: 600px;
-    overflow-y: auto;
-    padding-right: 10px;
-    gap: 20px;
-}
-
-.paquetes-grid::-webkit-scrollbar {
-    width: 6px;
-}
-
-.paquetes-grid::-webkit-scrollbar-thumb {
-    background-color: #007bff;
-    border-radius: 5px;
-}
-
-.paquetes-grid::-webkit-scrollbar-track {
-    background-color: #f0f0f0;
-}
-
-.paquetes-container {
-    padding: 40px 20px 80px;
-    background-color: #f5f8fa;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-}
-.paquetes-grid {
-    gap: 30px;
-}
-.paquete {
-    background-color: #ffffff;
-    border: 1px solid #e2e2e2;
-    border-radius: 10px;
-    overflow: hidden;
-    transition: transform 0.2s ease;
-}
-.paquete:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 16px rgba(0,0,0,0.1);
-}
-</style>
 </head>
 <body>
-<header class="header" style="background-color:#0d2f52; padding: 15px 0;">
-<div class="container" style="text-align:center; color:white;">
-<h1 style="margin:0; font-size: 28px;"><i class="fas fa-plane"></i> ViajaFácil</h1>
-<nav class="nav" style="margin-top:10px;">
-<a href="index.html" style="color:white; margin: 0 15px;">Inicio</a>
-<a href="contacto.html" style="color:white; margin: 0 15px;">Contacto</a>
-<a href="viajes.html" style="color:white; margin: 0 15px;">Viajes</a>
-<a href="paquetes.html" style="color:white; margin: 0 15px;">Paquetes</a>
-<a href="organigrama.html" style="color:white; margin: 0 15px;">Organigrama</a>
-
-</header>
+<header class="header">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-plane"></i>
+                <span>ViajaFácil</span>
+            </div>
+            <nav class="nav">
+                <a href="index.html">Inicio</a>
+                <a href="contacto.html">Contacto</a>
+                <a href="viajes.html">Viajes</a>
+                <a href="paquetes.html">Paquetes</a>
+                <a href="organigrama.html">Organigrama</a>
+            </nav>
+        </div>
+    </header>
 
 <div class="paquetes-container">
-<h1 style="text-align:center;">Paquetes de Viaje</h1>
 <div class="filtros">
 <button onclick="filtrar('todos')">Todos</button>
 <button onclick="filtrar('oferta')">Ofertas</button>
@@ -386,10 +238,9 @@
                 <div class="footer-section">
                     <h4>Enlaces</h4>
                     <ul>
-                        <li><a href="#">Términos y condiciones</a></li>
+                       <li><a href="#">Términos y condiciones</a></li>
                         <li><a href="#">Política de privacidad</a></li>
-                        <li><a href="#">Cancelaciones</a></li>
-                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Reseñas</a></li>
                     </ul>
                 </div>
             </div>
