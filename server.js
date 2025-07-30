@@ -12,7 +12,7 @@ mongoose.connect('mongodb+srv://bnarce:WmQ32m2fJM7quDBV@bncluster.fdlgi1p.mongod
   useNewUrlParser: true,
   useUnifiedTopology: true
 })
-.then(() => console.log('✅ Conectado a MongoDB Atlas'))
+.then(() => console.log('Conectado a MongoDB '))
 .catch(err => console.error('❌ Error de conexión:', err));
 
 // Esquema de datos
