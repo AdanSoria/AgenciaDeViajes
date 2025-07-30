@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Viajes</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<script>
+  // Obtener y mostrar los viajes
+  async function cargarViajes() {
+    try {
+      const respuesta = await fetch('http://localhost:3000/api/viajes');
+      const datos = await respuesta.json();
+
+      const tabla = document.getElementById('tabla-viajes');
+      tabla.innerHTML = '';
+
+      datos.forEach(viaje => {
+        const fila = document.createElement('tr');
+        fila.innerHTML = `
+          <td>${viaje.paquete}</td>
+          <td>${viaje.duracion}</td>
+          <td>${viaje.ciudades}</td>
+          <td>$${viaje.precio} USD</td>
+          <td>${viaje.aerolinea}</td>
+        `;
+        tabla.appendChild(fila);
+      });
+    } catch (error) {
+      console.error('Error al cargar los viajes:', error);
+    }
+  }
+
+  cargarViajes();
+</script>
+
+<body>
+
+  <!-- Header -->
+  <header class="header" style="background-color:#0d2f52; padding: 15px 0;">
+    <div class="container" style="text-align:center; color:white;">
+      <h1 style="margin:0; font-size: 28px;"><i class="fas fa-plane"></i> ViajaFácil</h1>
+      <nav class="nav" style="margin-top:10px;">
+        <a href="index.html" style="color:white; margin: 0 15px;">Inicio</a>
+        <a href="contacto.html" style="color:white; margin: 0 15px;">Contacto</a>
+        <a href="viajes.html" style="color:white; margin: 0 15px;">Viajes</a>
+        <a href="paquetes.html" style="color:white; margin: 0 15px;">Paquetes</a>
+        <a href="organigrama.html" style="color:white; margin: 0 15px;">Organigrama</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Contenido principal -->
+  <main class="viajes-container">
+    <!-- Filtros -->
+    <section class="filtros-panel">
+  <h2>Filtrar resultados</h2>
+
+  <div class="filtros-izquierda">
+    <div class="filtro-bloque">
+      <h4>Buscar rango de precio:</h4>
+      <label>Min: $<span id="minPrecio">799</span></label>
+      <input type="range" id="precioMin" min="799" max="4210" value="799">
+      <label>Max: $<span id="maxPrecio">4210</span></label>
+      <input type="range" id="precioMax" min="799" max="4210" value="4210">
+    </div>
+
+    <div class="filtro-bloque">
+      <h4>Buscar rango de días:</h4>
+      <label>Mín: <span id="minDias">6</span> días</label>
+      <input type="range" id="diasMin" min="6" max="28" value="6">
+      <label>Máx: <span id="maxDias">28</span> días</label>
+      <input type="range" id="diasMax" min="6" max="28" value="28">
+    </div>
+
+    <button class="btn-limpiar">Limpiar filtros</button>
+  </div>
+
+  <div class="filtros-derecha">
+    <div class="filtro-bloque">
+      <h4>Filtrar por país:</h4>
+      <div class="checkbox-grid">
+        <label><input type="checkbox" value="Alemania"> Alemania</label>
+        <label><input type="checkbox" value="Austria"> Austria</label>
+        <label><input type="checkbox" value="Bélgica"> Bélgica</label>
+        <label><input type="checkbox" value="España"> España</label>
+        <label><input type="checkbox" value="Francia"> Francia</label>
+        <label><input type="checkbox" value="Italia"> Italia</label>
+        <label><input type="checkbox" value="Reino Unido"> Reino Unido</label>
+        <label><input type="checkbox" value="Suiza"> Suiza</label>
+      </div>
+    </div>
+
+    <div class="filtro-bloque">
+      <h4>Filtrar por aerolínea:</h4>
+      <div class="checkbox-grid">
+        <label><input type="checkbox" value="Iberia"> Iberia</label>
+        <label><input type="checkbox" value="Emirates"> Emirates</label>
+        <label><input type="checkbox" value="Lufthansa"> Lufthansa</label>
+        <label><input type="checkbox" value="Air France"> Air France</label>
+        <label><input type="checkbox" value="KLM"> KLM</label>
+        <label><input type="checkbox" value="Delta"> Delta</label>
+        <label><input type="checkbox" value="Solo Terrestre"> Solo Terrestre</label>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+    <!-- Resultados -->
+    <section class="resultados-tabla">
+      <table>
+        <thead>
+          <tr>
+            <th>Paquete</th>
+            <th>Duración</th>
+            <th>Ciudades Visitadas</th>
+            <th>Precio</th>
+            <th>Aerolínea</th>
+          </tr>
+        </thead>
+        <tbody id="tabla-viajes">
+          <!-- Aquí irán los datos dinámicamente desde MongoDB -->
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" id="contacto">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>ViajaFácil</h3>
+          <p>Tu agencia de viajes de confianza desde ayer</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h4>Contacto</h4>
+          <p><i class="fas fa-phone"></i> +34 900 123 456</p>
+          <p><i class="fas fa-envelope"></i> info@viajafacil.com</p>
+          <p><i class="fas fa-map-marker-alt"></i> Tepic, Nayarit</p>
+        </div>
+        <div class="footer-section">
+          <h4>Enlaces</h4>
+          <ul>
+            <li><a href="#">Términos y condiciones</a></li>
+            <li><a href="#">Política de privacidad</a></li>
+            <li><a href="#">Cancelaciones</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 ViajaFácil. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+<script>
+  let todosLosViajes = [];
+
+  async function cargarViajes() {
+    try {
+      const respuesta = await fetch('http://localhost:3000/api/viajes');
+      const datos = await respuesta.json();
+      todosLosViajes = datos;
+      mostrarViajes(datos);
+    } catch (error) {
+      console.error('Error al cargar los viajes:', error);
+    }
+  }
+
+  function mostrarViajes(viajes) {
+    const tabla = document.getElementById('tabla-viajes');
+    tabla.innerHTML = '';
+
+    viajes.forEach(viaje => {
+      const fila = document.createElement('tr');
+      fila.innerHTML = `
+        <td>${viaje.paquete}</td>
+        <td>${viaje.duracion}</td>
+        <td>${viaje.ciudades}</td>
+        <td>$${viaje.precio} USD</td>
+        <td>${viaje.aerolinea}</td>
+      `;
+      tabla.appendChild(fila);
+    });
+  }
+
+  function aplicarFiltros() {
+    const precioMin = parseInt(document.getElementById('precioMin').value);
+    const precioMax = parseInt(document.getElementById('precioMax').value);
+    const diasMin = parseInt(document.getElementById('diasMin').value);
+    const diasMax = parseInt(document.getElementById('diasMax').value);
+
+    const paisesSeleccionados = Array.from(document.querySelectorAll('.filtro-bloque input[type="checkbox"]:checked'))
+      .filter(cb => ['Alemania', 'Austria', 'Bélgica', 'España', 'Francia', 'Italia', 'Reino Unido', 'Suiza'].includes(cb.value))
+      .map(cb => cb.value);
+
+    const aerolineasSeleccionadas = Array.from(document.querySelectorAll('.filtro-bloque input[type="checkbox"]:checked'))
+      .filter(cb => ['Iberia', 'Emirates', 'Lufthansa', 'Air France', 'KLM', 'Delta', 'Solo Terrestre'].includes(cb.value))
+      .map(cb => cb.value);
+
+    const filtrados = todosLosViajes.filter(viaje => {
+      const dias = parseInt(viaje.duracion);
+      const ciudadEnPais = paisesSeleccionados.length === 0 || paisesSeleccionados.some(pais => viaje.paises.includes(pais));
+      const aerolineaMatch = aerolineasSeleccionadas.length === 0 || aerolineasSeleccionadas.includes(viaje.aerolinea);
+
+      return (
+        viaje.precio >= precioMin &&
+        viaje.precio <= precioMax &&
+        dias >= diasMin &&
+        dias <= diasMax &&
+        ciudadEnPais &&
+        aerolineaMatch
+      );
+    });
+
+    mostrarViajes(filtrados);
+  }
+
+  // Eventos para filtros
+  document.querySelectorAll('#precioMin, #precioMax, #diasMin, #diasMax').forEach(input => {
+    input.addEventListener('input', aplicarFiltros);
+  });
+
+  document.querySelectorAll('.filtro-bloque input[type="checkbox"]').forEach(cb => {
+    cb.addEventListener('change', aplicarFiltros);
+  });
+
+  document.querySelector('.btn-limpiar').addEventListener('click', () => {
+    document.querySelectorAll('.filtro-bloque input[type="checkbox"]').forEach(cb => cb.checked = false);
+    document.getElementById('precioMin').value = 799;
+    document.getElementById('precioMax').value = 4210;
+    document.getElementById('diasMin').value = 6;
+    document.getElementById('diasMax').value = 28;
+    aplicarFiltros();
+  });
+
+  cargarViajes();
+</script>
+
+</body>
+</html>
