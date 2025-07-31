@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const nodemailer = require('nodemailer');
 
 const app = express();
 app.use(cors());
@@ -34,16 +35,41 @@ const Viaje = mongoose.model('Viaje', {
 
 
 
-// Ruta para recibir datos del formulario
+// Ruta para recibir datos del formulario y enviar correo
 app.post('/api/contacto', async (req, res) => {
   try {
     const nuevo = new Formulario(req.body);
     await nuevo.save();
-    res.status(200).json({ mensaje: '✅ Formulario enviado y guardado correctamente.' });
+
+    // Configura el transporte de nodemailer para Gmail
+    let transporter = nodemailer.createTransport({
+      service: 'gmail',
+      auth: {
+        user: 'viajafacildm@gmail.com', // Tu correo Gmail
+        pass: 'wbvcomdhehvpdsvt',       // Tu contraseña de aplicación
+      },
+    });
+
+    let mailOptions = {
+      from: 'viajafacildm@gmail.com',
+      to: 'viajafacildm@gmail.com', 
+      subject: `Nuevo contacto: ${req.body.asunto}`,
+      text: `
+        Email: ${req.body.email}
+        Teléfono: ${req.body.telefono}
+        Mensaje: ${req.body.mensaje}
+      `,
+    };
+
+    // Enviar correo
+    await transporter.sendMail(mailOptions);
+
+    res.status(200).json({ mensaje: '✅ Formulario enviado, guardado y notificado por correo.' });
   } catch (error) {
-    res.status(500).json({ error: '❌ Error al guardar en la base de datos.' });
+    res.status(500).json({ error: '❌ Error al guardar en la base de datos o enviar correo.' });
   }
 });
+
 // Ruta para obtener todos los viajes
 app.get('/api/viajes', async (req, res) => {
   try {
@@ -53,7 +79,6 @@ app.get('/api/viajes', async (req, res) => {
     res.status(500).json({ error: '❌ Error al obtener viajes.' });
   }
 });
-
 
 // Iniciar servidor
 app.listen(3000, () => {
